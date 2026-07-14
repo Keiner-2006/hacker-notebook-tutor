@@ -1,5 +1,5 @@
 <div align="center">
-<img width="1200" alt="Hacker Notebook Tutor" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" />
+<img width="1200" alt="Hacker Notebook Tutor" src="assets/images/readme_banner_1784048926317.jpg" />
 </div>
 
 # Hacker Notebook Tutor
