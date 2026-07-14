@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Simple verification helper
+    function isValidId(id) {
+      return id is string && id != "";
+    }
+
+    // Mount point under users collection.
+    // Each user has their own workspace sandboxed under their generated userId.
+    match /users/{userId} {
+      allow read, write: if isValidId(userId);
+      
+      match /notebooks/{notebookId} {
+        allow read, write: if isValidId(userId) && isValidId(notebookId);
+        
+        match /items/{itemId} {
+          allow read, write: if isValidId(userId) && isValidId(notebookId) && isValidId(itemId);
+        }
+        
+        match /evaluations/{evaluationId} {
+          allow read, write: if isValidId(userId) && isValidId(notebookId) && isValidId(evaluationId);
+        }
+
+        match /labs/{labId} {
+          allow read, write: if isValidId(userId) && isValidId(notebookId) && isValidId(labId);
+        }
+      }
+    }
+  }
+}

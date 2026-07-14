@@ -1,0 +1,62 @@
+{
+  "App.tsx": {
+    "mtime": 1784045240.5879745,
+    "ast_hash": "9bd7202a828b665dde6682bb74600f1f",
+    "semantic_hash": "9bd7202a828b665dde6682bb74600f1f"
+  },
+  "components/EvaluationCenter.tsx": {
+    "mtime": 1784042897.093832,
+    "ast_hash": "cac27f99587afeca4fadc92a5d527e30",
+    "semantic_hash": "cac27f99587afeca4fadc92a5d527e30"
+  },
+  "components/Header.tsx": {
+    "mtime": 1784042897.0680504,
+    "ast_hash": "510727f401922f8b31b44ae4dc1b31bf",
+    "semantic_hash": "510727f401922f8b31b44ae4dc1b31bf"
+  },
+  "components/LabsManager.tsx": {
+    "mtime": 1784042897.10991,
+    "ast_hash": "fb9adb1cf59f3b87cd00872795a4eb96",
+    "semantic_hash": "fb9adb1cf59f3b87cd00872795a4eb96"
+  },
+  "components/Login.tsx": {
+    "mtime": 1784045361.064173,
+    "ast_hash": "6349040499115c009ca8d0b393f350eb",
+    "semantic_hash": "6349040499115c009ca8d0b393f350eb"
+  },
+  "components/NotebookItemsManager.tsx": {
+    "mtime": 1784042897.0798986,
+    "ast_hash": "cc9e75c38ee9091d6d93d8db38f9e712",
+    "semantic_hash": "cc9e75c38ee9091d6d93d8db38f9e712"
+  },
+  "components/NotebookList.tsx": {
+    "mtime": 1784042897.0761197,
+    "ast_hash": "8d08cbbae3cbeee659000fe019c78ce5",
+    "semantic_hash": "8d08cbbae3cbeee659000fe019c78ce5"
+  },
+  "components/TerminalChat.tsx": {
+    "mtime": 1784042897.0798986,
+    "ast_hash": "3cd518ad4738393fb5b08e926f5a553c",
+    "semantic_hash": "3cd518ad4738393fb5b08e926f5a553c"
+  },
+  "lib/db.ts": {
+    "mtime": 1784045456.6969652,
+    "ast_hash": "fcdefc973ced81218294cc4499500181",
+    "semantic_hash": "fcdefc973ced81218294cc4499500181"
+  },
+  "lib/firebase.ts": {
+    "mtime": 1784042897.0378773,
+    "ast_hash": "d7a05643c7a420c357c449bd9f5bd476",
+    "semantic_hash": "d7a05643c7a420c357c449bd9f5bd476"
+  },
+  "main.tsx": {
+    "mtime": 1784042896.9980662,
+    "ast_hash": "2b36426d5ad7e08ef79746aa524f4fb7",
+    "semantic_hash": "2b36426d5ad7e08ef79746aa524f4fb7"
+  },
+  "types.ts": {
+    "mtime": 1784042897.0098314,
+    "ast_hash": "d790e9340f04384a4d5c1d7294919e1d",
+    "semantic_hash": "d790e9340f04384a4d5c1d7294919e1d"
+  }
+}

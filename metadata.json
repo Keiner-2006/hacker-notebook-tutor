@@ -1,0 +1,6 @@
+{
+  "name": "Hacker Notebook Tutor",
+  "description": "Un tutor y cuaderno de apuntes estilo terminal hacker interactivo con IA de Gemini para organizar notas, comandos, técnicas de pentesting y realizar autoevaluaciones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-terminal-black: #0A0A0A;
+  --color-terminal-dark: #0F0F0F;
+  --color-terminal-sidebar: #0D0D0D;
+  --color-terminal-gray: #151515;
+  --color-terminal-green: #00FF41;
+  --color-terminal-green-dim: #888888;
+  --color-terminal-green-bright: #00FF41;
+  --color-terminal-red: #E03E3E;
+  --color-terminal-amber: #D9A006;
+}
+
+/* Elegant Dark design overrides */
+body {
+  background-color: #0A0A0A;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #E0E0E0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Retro CRT effect - keeping but making it extremely subtle */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  background-size: 100% 4px, 6px 100%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.crt-flicker {
+  animation: crt-flicker-anim 0.25s infinite;
+}
+
+@keyframes crt-flicker-anim {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+/* Scrollbar terminal design */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Glowing text and borders - Elegant Dark theme has soft premium glow */
+.glow-text {
+  text-shadow: 0 0 4px rgba(0, 255, 65, 0.4);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 4px rgba(217, 160, 6, 0.4);
+}
+
+/* Elegant Dark borders and cards: replace glowing neon borders with neat high-contrast borders */
+.glow-border {
+  border: 1px solid #333333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background-color: #0F0F0F;
+}
+
+.glow-border-amber {
+  border: 1px solid #D9A006;
+  box-shadow: 0 0 4px rgba(217, 160, 6, 0.15);
+}
+
+.glow-border-focus:focus-within {
+  border-color: #00FF41;
+  box-shadow: 0 0 4px rgba(0, 255, 65, 0.2);
+}
+
+/* Custom hacker animations */
+@keyframes cursor-blink {
+  0%, 49% { border-color: transparent; }
+  50%, 100% { border-color: currentColor; }
+}
+
+.cursor-blink::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: currentColor;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: cursor-blink-anim 1s infinite;
+}
+
+@keyframes cursor-blink-anim {
+  50% { opacity: 0; }
+}
+
+/* Custom component styles to match design HTML structure */
+.cyber-card {
+  background-color: #0F0F0F;
+  border: 1px solid #222222;
+  border-radius: 4px;
+}
+
+.code-block-cyber {
+  background-color: #000000;
+  border: 1px solid #1A1A1A;
+  color: #00FF41;
+}
+
+.code-block-cyber-yellow {
+  background-color: #000000;
+  border: 1px solid #1A1A1A;
+  color: #D9A006;
+}
+

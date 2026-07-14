@@ -1,0 +1,152 @@
+{
+  "entities": {
+    "Notebook": {
+      "title": "Notebook",
+      "description": "Un cuaderno de apuntes o disco de almacenamiento virtual (Drive).",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nombre del cuaderno"
+        },
+        "description": {
+          "type": "string",
+          "description": "Descripción del cuaderno"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp de creación en milisegundos"
+        }
+      },
+      "required": ["name", "description", "createdAt"]
+    },
+    "NotebookItem": {
+      "title": "NotebookItem",
+      "description": "Un registro individual de nota, comando o técnica dentro de un cuaderno.",
+      "type": "object",
+      "properties": {
+        "notebookId": {
+          "type": "string",
+          "description": "ID del cuaderno asociado"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["note", "command", "technique"],
+          "description": "Tipo de registro"
+        },
+        "title": {
+          "type": "string",
+          "description": "Título o asunto del apunte"
+        },
+        "content": {
+          "type": "string",
+          "description": "Contenido, descripción o detalles"
+        },
+        "syntax": {
+          "type": "string",
+          "description": "Sintaxis ejecutable de comando o pasos de técnica"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Lista de etiquetas asociadas"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp de creación en milisegundos"
+        }
+      },
+      "required": ["notebookId", "type", "title", "content", "tags", "createdAt"]
+    },
+    "Evaluation": {
+      "title": "Evaluation",
+      "description": "Un examen dinámico de auto-evaluación completado por el usuario.",
+      "type": "object",
+      "properties": {
+        "notebookId": {
+          "type": "string",
+          "description": "ID del cuaderno asociado"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp de creación en milisegundos"
+        },
+        "questions": {
+          "type": "array",
+          "description": "Lista de preguntas y respuestas del examen"
+        },
+        "score": {
+          "type": "integer",
+          "description": "Número de respuestas correctas"
+        },
+        "totalQuestions": {
+          "type": "integer",
+          "description": "Número total de preguntas"
+        },
+        "aiAnalysis": {
+          "type": "string",
+          "description": "Análisis, retroalimentación o plan de estudio generado por la IA"
+        }
+      },
+      "required": ["notebookId", "createdAt", "questions", "score", "totalQuestions"]
+    },
+    "Lab": {
+      "title": "Lab",
+      "description": "Un registro de laboratorio realizado por el usuario con vulnerabilidades encontradas.",
+      "type": "object",
+      "properties": {
+        "notebookId": {
+          "type": "string",
+          "description": "ID del cuaderno asociado"
+        },
+        "name": {
+          "type": "string",
+          "description": "Nombre del laboratorio o máquina"
+        },
+        "platform": {
+          "type": "string",
+          "description": "Plataforma de la máquina o lab (ej. HackTheBox, TryHackMe)"
+        },
+        "date": {
+          "type": "string",
+          "description": "Fecha de realización"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["en_progreso", "completado"],
+          "description": "Estado del laboratorio"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notas o write-up detallado en Markdown"
+        },
+        "vulnerabilities": {
+          "type": "array",
+          "description": "Lista de vulnerabilidades encontradas"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp de creación en milisegundos"
+        }
+      },
+      "required": ["notebookId", "name", "platform", "date", "status", "notes", "vulnerabilities", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}/notebooks": {
+      "schema": "Notebook",
+      "description": "Colección de cuadernos o unidades de disco virtuales por usuario."
+    },
+    "users/{userId}/notebooks/{notebookId}/items": {
+      "schema": "NotebookItem",
+      "description": "Colección de apuntes, comandos o técnicas registrados en un cuaderno específico."
+    },
+    "users/{userId}/notebooks/{notebookId}/evaluations": {
+      "schema": "Evaluation",
+      "description": "Colección de reportes de exámenes o evaluaciones completadas en un cuaderno."
+    },
+    "users/{userId}/notebooks/{notebookId}/labs": {
+      "schema": "Lab",
+      "description": "Colección de laboratorios prácticos registrados por el usuario."
+    }
+  }
+}

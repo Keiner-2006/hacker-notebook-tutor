@@ -1,0 +1,228 @@
+{
+  "communities": {
+    "0": [
+      "components_header",
+      "components_header_header",
+      "components_header_headerprops",
+      "components_login",
+      "components_login_login",
+      "components_login_loginprops",
+      "lib_db_buildfirestoreuserkey",
+      "lib_db_saveuserhandleforid",
+      "lib_firebase",
+      "lib_firebase_app",
+      "lib_firebase_auth",
+      "lib_firebase_db"
+    ],
+    "1": [
+      "app",
+      "app_app",
+      "lib_db_addlab",
+      "lib_db_deletenotebook",
+      "lib_db_deletenotebookitem",
+      "lib_db_getevaluations",
+      "lib_db_getnotebooks",
+      "lib_db_getsavedhandleforid",
+      "lib_db_migrateuserworkspacetoemailkey",
+      "lib_db_updatelab",
+      "main"
+    ],
+    "2": [
+      "lib_db",
+      "lib_db_addnotebookitem",
+      "lib_db_deletelab",
+      "lib_db_firestoreerrorinfo",
+      "lib_db_getorcreateuserid",
+      "lib_db_operationtype",
+      "lib_db_saveuserhandle"
+    ],
+    "3": [
+      "lib_db_addevaluation",
+      "lib_db_addnotebook",
+      "lib_db_getlabs",
+      "lib_db_getnotebookitems",
+      "lib_db_handlefirestoreerror",
+      "lib_db_updatenotebookitem"
+    ],
+    "4": [
+      "components_labsmanager",
+      "components_labsmanager_labsmanager",
+      "components_labsmanager_labsmanagerprops",
+      "types_lab",
+      "types_vulnerability"
+    ],
+    "5": [
+      "components_evaluationcenter",
+      "components_evaluationcenter_evaluationcenter",
+      "components_evaluationcenter_evaluationcenterprops",
+      "types_evaluation"
+    ],
+    "6": [
+      "components_notebookitemsmanager",
+      "components_notebookitemsmanager_notebookitemsmanager",
+      "components_notebookitemsmanager_notebookitemsmanagerprops",
+      "types_notebookitem"
+    ],
+    "7": [
+      "components_notebooklist",
+      "components_notebooklist_notebooklist",
+      "components_notebooklist_notebooklistprops",
+      "types_notebook"
+    ],
+    "8": [
+      "components_terminalchat",
+      "components_terminalchat_terminalchat",
+      "components_terminalchat_terminalchatprops",
+      "types_chatmessage"
+    ],
+    "9": [
+      "types",
+      "types_notebookitemtype",
+      "types_quizquestion",
+      "types_quizquestiontype"
+    ]
+  },
+  "cohesion": {
+    "0": 0.22727272727272727,
+    "1": 0.32727272727272727,
+    "2": 0.2857142857142857,
+    "3": 0.3333333333333333,
+    "4": 0.5,
+    "5": 0.6666666666666666,
+    "6": 0.6666666666666666,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 0.5
+  },
+  "gods": [
+    {
+      "id": "app_app",
+      "label": "App()",
+      "degree": 16
+    },
+    {
+      "id": "lib_db_handlefirestoreerror",
+      "label": "handleFirestoreError()",
+      "degree": 14
+    },
+    {
+      "id": "types_notebook",
+      "label": "Notebook",
+      "degree": 13
+    },
+    {
+      "id": "types_notebookitem",
+      "label": "NotebookItem",
+      "degree": 9
+    },
+    {
+      "id": "lib_db_saveuserhandleforid",
+      "label": "saveUserHandleForId()",
+      "degree": 6
+    },
+    {
+      "id": "lib_db_buildfirestoreuserkey",
+      "label": "buildFirestoreUserKey()",
+      "degree": 5
+    },
+    {
+      "id": "types_evaluation",
+      "label": "Evaluation",
+      "degree": 5
+    },
+    {
+      "id": "types_lab",
+      "label": "Lab",
+      "degree": 5
+    },
+    {
+      "id": "components_evaluationcenter_evaluationcenterprops",
+      "label": "EvaluationCenterProps",
+      "degree": 4
+    },
+    {
+      "id": "components_terminalchat_terminalchatprops",
+      "label": "TerminalChatProps",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "App()",
+      "target": "addEvaluation()",
+      "source_files": [
+        "App.tsx",
+        "lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "App()",
+      "target": "addNotebook()",
+      "source_files": [
+        "App.tsx",
+        "lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "App()",
+      "target": "addNotebookItem()",
+      "source_files": [
+        "App.tsx",
+        "lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "App()",
+      "target": "deleteLab()",
+      "source_files": [
+        "App.tsx",
+        "lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "App()",
+      "target": "getLabs()",
+      "source_files": [
+        "App.tsx",
+        "lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Notebook` connect `Notebook` to `App.tsx`, `db.ts`, `LabsManager.tsx`, `EvaluationCenter.tsx`, `NotebookItem`, `TerminalChat.tsx`, `types.ts`?",
+      "why": "High betweenness centrality (0.093) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `NotebookItem` connect `NotebookItem` to `App.tsx`, `db.ts`, `EvaluationCenter.tsx`, `TerminalChat.tsx`, `types.ts`?",
+      "why": "High betweenness centrality (0.036) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `saveUserHandleForId()` connect `Login.tsx` to `App.tsx`, `db.ts`?",
+      "why": "High betweenness centrality (0.028) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `HeaderProps`, `LoginProps`, `OperationType` to the rest of the system?",
+      "why": "6 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}
